@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+body {
+	background-color: #00d0ac;
+	display: flex;
+	justify-content: center;
+	transition: 0.4s;
+	margin: 0;
+}
+
+.fbox {
+	display: flex;
+}
+
+.fbdc {
+	flex-direction: column;
+}
+
+.fbac {
+	align-items: center;
+}
+
+#check {
+	display: none;
+}
+
+#iconMenu {
+	cursor: pointer;
+	padding: 15px;
+	position: absolute;
+	z-index: 4;
+	left: 0;
+	background-image: url('assets/gearBlack.png');
+	width: 15px;
+	height: 15px;
+	background-repeat: no-repeat;
+	margin: 15px;
+	background-size: 100%;
+	transition: all .2s linear;
+}
+
+.bar {
+	height: 100vh;
+	width: 300px;
+	background-color: #009980;
+	position: absolute;
+	border-radius: 0 10px 10px 0;
+	left: -300px;
+	transition: all .3s linear;
+}
+
+.options {
+	width: 100%;
+	position: absolute;
+	top: 60px;
+	margin-top: 200px;
+	opacity: 0;
+	transition: all .3s linear;
+}
+
+#check:checked~.bar {
+	transform: translateX(300px);
+}
+
+#check:checked~#iconMenu{
+    transform: rotate(100deg);
+}
+
+#check:checked~.bar .options {
+	opacity: 1;
+	margin-top: 0px;
+	transition-delay: .2s;
+}
+
+.englishIcon {
+	display: block;
+	background-image: url('assets/engIcon.png');
+	background-size: 100%;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+}
+
+.englishIcon:hover {
+	cursor: pointer;
+}
+
+.portugueseIcon {
+	display: block;
+	background-image: url('assets/ptIcon.png');
+	background-size: 100%;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+}
+
+.portugueseIcon:hover {
+	cursor: pointer;
+}
+
+.options {
+	left: 15px;
+	position: absolute;
+	width: 213px;
+	height: 157px;
+}
+
+.options>p {
+	margin-right: 7px;
+	font-family: 'Dancing Script', serif;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.container {
+	width: 484px;
+	padding: 0 15px;
+}
+
+h1 {
+	font-family: 'Dancing Script', serif;
+	margin-bottom: 10px;
+}
+
+#description {
+	font-size: 25px;
+	margin: 10px;
+	font-family: 'Dancing Script', serif;
+	font-weight: bold;
+}
+
+input[type=text] {
+	font-family: 'Acme', serif;
+	border-style: none;
+	width: 265px;
+	height: 35px;
+	border-radius: 5px;
+	padding-left: 15px;
+}
+
+input[type=submit] {
+    font-family: 'Dancing Script', serif;
+    border-style: solid;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #00d0ac;
+    font-weight: bold;
+	border-color: black;
+	transition: all 0.5s ease;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	transform: translateX(7px);
+}
+
+.itemsOfList {
+	width: 100%;
+	height: auto;
+}
+
+.items {
+	width: 100%;
+	height: auto;
+}
+
+li {
+	font-size: 20px;
+	font-family: 'Acme', serif;
+    transition: all .3s linear;
+}
+
+li:hover {
+	text-decoration: line-through;
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ffffff;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #00d0ac;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+input:checked+.slider {
+	background-color: #FFFFFF;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+	background-color: #000000;
+}
+
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+	#iconMenu {
+		width: 35px;
+		height: 35px;
+	}
+
+	#check:checked~.bar .options {
+		margin-top: 25px;
+	}
+
+	h1 {
+		font-size: 50px;
+	}
+
+	#description {
+		font-size: 42px;
+	}
+
+	input[type=text] {
+		width: 300px;
+		height: 45px;
+		font-size: 24px;
+	}
+
+	li {
+		font-size: 32px;
+	}
+
+	.options>p {
+		font-size: 30px;
+	}
+
+	.englishIcon, .portugueseIcon {
+		width: 45px;
+		height: 45px;
+	}
+
+	.slider:before {
+		height: 30px;
+		width: 30px;
+		left: 10px;
+		bottom: 8px;
+	}
+
+	.switch {
+		width: 80px;
+		height: 45px;
+	}
+
+	#description {
+		text-align: center;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	input[type=submit] {
+		margin-top: 5px;
+		width: 150px;
+		height: 50px;
+		font-size: 16px;
+	}
+}

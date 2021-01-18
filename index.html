@@ -1,0 +1,42 @@
+<html>
+   <head>
+      <title>To-Do List</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <input type="checkbox" id="check" onclick="alternIcon()">
+      <label id="iconMenu" for="check"></label>
+      <div class="bar" id="barMenu">
+         <div class="options">
+            <p id="selectLng"> Select Language:</p>
+            <div class="languageIcons fbox">
+               <span class="englishIcon" id="engIcon"></span>
+               <span class="portugueseIcon" id="ptIcon"></span>
+            </div>
+            <p id="optionsFnt">Select Theme:</p>
+            <label class="switch">
+            <input type="checkbox" id="myCheck" onclick="darkLight()">
+            <span class="slider"></span>
+            </label>
+            <label class="switch">
+            <input type="checkbox">
+            <span= class="slider-round"></span>
+            </label>
+         </div>
+      </div>
+      <div class="container fbox fbdc fbac">
+         <h1 id="title">To-Do List</h1>
+         <p id="description">Type an assignment below to add it to your list:</p>
+         <form action="" autocomplete="off">
+            <input type="text" id="item" name="item" required="required">
+            <input type="submit" id="addItem" name="addItem" value="ADD ASSIGNMENT">
+         </form>
+         <div class="items">
+            <ul id="itemsOfList">
+            </ul>
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
