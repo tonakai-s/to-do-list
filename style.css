@@ -1,25 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+/* Declaração de classes FlexBox */
+.fbox {
+	display: flex;
+}
+.fbdc {
+	flex-direction: column;
+}
+.fbac {
+	align-items: center;
+}
+/*Fim da declaração de classes FlexBox */
+
 body {
 	background-color: #00d0ac;
 	display: flex;
 	justify-content: center;
 	transition: 0.4s;
 	margin: 0;
+	font-family: 'Dancing Script', serif;
 }
 
-.fbox {
-	display: flex;
-}
-
-.fbdc {
-	flex-direction: column;
-}
-
-.fbac {
-	align-items: center;
-}
-
+/* Aba lateral */
 #check {
 	display: none;
 }
@@ -107,12 +110,12 @@ body {
 
 .options>p {
 	margin-right: 7px;
-	font-family: 'Dancing Script', serif;
 	font-weight: bold;
 	font-size: 18px;
 	margin-top: 7px;
 	margin-bottom: 5px;
 }
+/* Fim aba lateral */
 
 .container {
 	width: 484px;
@@ -120,15 +123,17 @@ body {
 }
 
 h1 {
-	font-family: 'Dancing Script', serif;
 	margin-bottom: 10px;
 }
 
 #description {
 	font-size: 25px;
 	margin: 10px;
-	font-family: 'Dancing Script', serif;
 	font-weight: bold;
+}
+
+h1:hover, #description:hover{
+	cursor: default;
 }
 
 input[type=text] {
@@ -148,21 +153,19 @@ input[type=submit] {
     background-color: #00d0ac;
     font-weight: bold;
 	border-color: black;
-	transition: all 0.5s ease;
 }
 
 input[type=submit]:hover {
 	cursor: pointer;
-	transform: translateX(7px);
 }
 
 .itemsOfList {
-	width: 100%;
+	width: auto;
 	height: auto;
 }
 
 .items {
-	width: 100%;
+	width: auto;
 	height: auto;
 }
 
@@ -244,8 +247,8 @@ input:checked+.slider:before {
 
 @media (max-width: 480px) {
 	#iconMenu {
-		width: 35px;
-		height: 35px;
+		width: 25px;
+		height: 25px;
 	}
 
 	#check:checked~.bar .options {
@@ -253,16 +256,17 @@ input:checked+.slider:before {
 	}
 
 	h1 {
-		font-size: 50px;
+		font-size: 40px;
 	}
 
 	#description {
-		font-size: 42px;
+		font-size: 26px;
+		text-align: center;
 	}
 
 	input[type=text] {
-		width: 300px;
-		height: 45px;
+		width: 275px;
+    	height: 37px;
 		font-size: 24px;
 	}
 
@@ -271,29 +275,26 @@ input:checked+.slider:before {
 	}
 
 	.options>p {
-		font-size: 30px;
+		font-size: 22px;
 	}
 
 	.englishIcon, .portugueseIcon {
-		width: 45px;
-		height: 45px;
+	    width: 39px;
+    	height: 39px;
 	}
 
 	.slider:before {
-		height: 30px;
-		width: 30px;
-		left: 10px;
-		bottom: 8px;
+		height: 28px;
+    	width: 28px;
+    	left: 8px;
+    	bottom: 5px;
 	}
 
 	.switch {
-		width: 80px;
-		height: 45px;
+		width: 71px;
+		height: 37px;
 	}
 
-	#description {
-		text-align: center;
-	}
 	form {
 		display: flex;
 		flex-direction: column;
@@ -302,7 +303,8 @@ input:checked+.slider:before {
 	input[type=submit] {
 		margin-top: 5px;
 		width: 150px;
-		height: 50px;
-		font-size: 16px;
+    	height: 38px;
+    	font-size: 14px;
+		text-align: center;
 	}
 }

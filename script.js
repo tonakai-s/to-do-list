@@ -1,7 +1,14 @@
+//Retornar data e hora atual
+function dataHoraAtual(){
+    var dNow = new Date();
+    var localDate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+    return localDate;
+}
+
 //Criando LI's das tarefas.
 document.getElementById("addItem").onclick = function addItemOnList() {
     if (document.getElementById("item").value.length > 0) {
-        var item = document.getElementById("item").value;
+        var item = document.getElementById("item").value + ' - ' + dataHoraAtual();
         var li = document.createElement("li");
         var i = document.createTextNode(item);
         li.appendChild(i);
